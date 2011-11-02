@@ -1,10 +1,11 @@
-arraycosSim
+arrayCosSim
 ===========
 
 Description
 -----------
 
-Utility function to compare two arrays of objects utilizing cosine similarity principles.
+Simple utility function to compare two arrays of objects utilizing cosine similarity principles.
+Users undescore.js.
 
 
 Instructions:
@@ -16,10 +17,12 @@ you will use as the frequency of comparison, and a floating point number precisi
 
 Usage:
 ===========
-	var array1 = [{'word':'testword1', 'count': 1}, {'word':'testword2', 'count': 1}];
-	var array2 = [{'word':'testword2', 'count': 1}];
+	var word1 = {'word':'testword1', 'count': 1};
+	var word2 = {'word':'testword2', 'count': 1};	
+	var array1 = [word1, word2];
+	var array2 = [word2];
 	var options = {'comparable': 'word', 'frequency': 'count', 'precision': 5};
-	var compareResult = arraycosSim(array1, array2, options);
+	var compareResult = arrayCosSim(array1, array2, options);
 	alert(compareResult);	// 0.70711
 
 You could also provide a callback function if the array is big enough by providing a callback
@@ -29,7 +32,5 @@ function with the options object. For example:
 		alert(result)
 	}
 	
-	var array1 = [{'word':'testword1', 'count': 1}, {'word':'testword2', 'count': 1}];
-	var array2 = [{'word':'testword2', 'count': 1}];
 	var options = {'comparable': 'word', 'frequency': 'count', 'precision': 5, 'callback': callbackHandler};
-	arraycosSim(array1, array2, options); //alert 0.70711
+	arrayCosSim(array1, array2, options); //alert 0.70711

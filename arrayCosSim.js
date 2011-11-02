@@ -26,7 +26,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		//of the function.
 		var	property = options.comparable, 
 			frequency = options.frequency,
-			accuracy = options.accuracy || 6;
+			accuracy = options.accuracy || 6,
 			dimensions, vector1, vector2, freq, result,
 			dotproduct = 0, magnitude1, magnitude2;
 		
@@ -34,15 +34,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		//array1 = [{'word':'testword1', 'count': 1}]
 		//array2 = [{'word':'testword2', 'count': 1}]
 		dimensions = _.union(array1, array2); 
-
+		console.log(dimensions);
 		//Now we have:
 		//dimensions = [{'word':'testword1', 'count': 1}, {'word':'testword2', 'count': 1}]
 		
 		//Let's use that dimensions vector to map the frequency of the vector 
 		//if it's in the original array, else set it to 0.
-		vector1 = _.map(dimensions, function(object) { return _.include(array2, object) ? object[frequency] : 0;});
+		vector1 = _.map(dimensions, function(object) { return _.include(array1, object) ? object[frequency] : 0;});
 		vector2 = _.map(dimensions, function(object) { return _.include(array2, object) ? object[frequency] : 0;});
-
+		console.log(vector1, vector2);
 		//Now we have:
 		//vector1 = [1, 0]
 		//vector2 = [0, 1]		
@@ -55,7 +55,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		magnitude2 = Math.sqrt(_.reduce(vector2, function(memo, num) { return num*num + memo;}, 0));
 		
 		//Get the resulting operation. cos x = a . b/|a|*|b|.
-		result = dotproduct/(magnitude1*magnitude2)).toFixed(accuracy);	
+		result = (dotproduct/(magnitude1*magnitude2)).toFixed(accuracy);	
 				
 		//Return the result.
 		if(_.isFunction(options.callback)) {		
@@ -64,6 +64,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			return result;
 		}
 	};	
+	
+	_.union = 
 	
 })(window, _, Math);
  
