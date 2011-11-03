@@ -71,10 +71,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		}
 	};		
 })(window, _, Math);
- 
-
-
-=======
-	};	
-})(window, _, Math);
->>>>>>> ad0e0d52d53ed87bd733a30a5319a698c1adac6d
