@@ -24,16 +24,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		
 		//Initialize variables we're going to be using for the rest
 		//of the function.
-		var	property = options.comparable, 
-			frequency = options.frequency,
-			accuracy = options.accuracy || 6,
-			dimensions, vector1, vector2, freq, result,
-			dotproduct = 0, magnitude1, magnitude2;
+		var	property   = options.comparable, 
+			frequency  = options.frequency,
+			accuracy   = options.accuracy || 6,
+			dotproduct = 0, dimensions, vector1, vector2, freq, result,
+			magnitude1, magnitude2;
 		
 		//Perform union on two arrays:
 		//array1 = [{'word':'testword1', 'count': 1}]
 		//array2 = [{'word':'testword2', 'count': 1}]
-		dimensions = _.union(array1, array2); 
+		dimensions = _.uniq(_.union(array1, array2), false, function(o) { return o[property]+o[frequency]; });
 		console.log(dimensions);
 		//Now we have:
 		//dimensions = [{'word':'testword1', 'count': 1}, {'word':'testword2', 'count': 1}]
@@ -63,10 +63,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		} else {
 			return result;
 		}
-	};	
-	
-	_.union = 
-	
+	};		
 })(window, _, Math);
  
 
