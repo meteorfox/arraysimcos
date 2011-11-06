@@ -35,4 +35,4 @@ function with the options object. For example:
 	}
 	
 	var options = {'comparable': 'word', 'frequency': 'count', 'precision': 5, 'callback': callbackHandler};
-	arrayCosSim(array1, array2, options); //alert 0.70711
+	arraysimcos(array1, array2, options); //alert 0.70711
