@@ -11,7 +11,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		return; 
 	}
 	
-	global.arrayCosSim = function(array1, array2, options) {	
+	global.arraysimcos = function(array1, array2, options) {	
 	
 		//Make sure that parameters provided are what we need.		
 		if(!(_.isArray(array1) && _.isArray(array2) && options 
